@@ -37,6 +37,8 @@ from ucs import *
 from kms import *
 import lists
 from metadata import *
+import subprocess
+import random
 
 
 
@@ -307,6 +309,7 @@ class Ponysay():
         ## The stuff
         if not self.unrecognised:
             self.printPony(self.args)
+            subprocess.Popen("/usr/bin/play /home/buecker/Documents/sounds/" + random.choice(["cow1.wav", "cow2.wav", "goat1.wav", "hog1.wav", "pony1.wav", "rooster1.wav", "sheep1.wav", "sheep2.wav"]) + " >/dev/null 2>&1 &", shell=True)
         else:
             self.args.help()
             exit(255)
