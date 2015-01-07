@@ -21,7 +21,8 @@ sharedirs = [('ponies', 'xterm ponies', 'PONYDIR', True),  # must be first
              ('extraponies', 'extra xterm ponies', 'XPONYDIR', True),
              ('extrattyponies', 'extra tty ponies', 'XTTYPONYDIR', True),
              ('quotes', 'pony quotes', 'QUOTEDIR', False),
-             ('balloons', 'balloon styles', 'BALLOONDIR', False)]
+             ('balloons', 'balloon styles', 'BALLOONDIR', False),
+             ('sounds', 'sound files', 'SOUNDDIR', False)]
 
 sharefiles = [('ucs', 'ucsmap')]
 

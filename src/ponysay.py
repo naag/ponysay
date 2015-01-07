@@ -116,6 +116,9 @@ class Ponysay():
         
         # The directories where balloon style files are stored
         self.balloondirs = self.__getShareDirectories('balloons/')
+
+        # The directories where sound files are stored
+        self.sounddirs = self.__getShareDirectories('sounds/')
         
         # ucsmap files
         self.ucsmaps = self.__getShareDirectories('ucsmap/')
@@ -309,7 +312,8 @@ class Ponysay():
         ## The stuff
         if not self.unrecognised:
             self.printPony(self.args)
-            subprocess.Popen("/usr/bin/play /home/buecker/Documents/sounds/" + random.choice(["cow1.wav", "cow2.wav", "goat1.wav", "hog1.wav", "pony1.wav", "rooster1.wav", "sheep1.wav", "sheep2.wav"]) + " >/dev/null 2>&1 &", shell=True)
+            sounds = os.listdir(self.sounddirs[0])
+            subprocess.Popen("play " + self.sounddirs[0] + "/" + random.choice(sounds) + " >/dev/null 2>&1 &", shell=True)
         else:
             self.args.help()
             exit(255)
